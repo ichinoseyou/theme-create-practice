@@ -1,0 +1,124 @@
+@charset "utf-8"; /* エンコードがUTF-8であることを指定 */
+/*
+theme Name: Wordpress テスト環境
+Author: Ichi
+Description: original theme
+version： 1.0.0
+*/
+
+body {
+  /*フォントの指定*/
+  font-family: 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'Noto Sans Japanese', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  /*サイト全体のフォントサイズを指定*/
+  font-size: 16px;
+  /*行間の指定*/
+  line-height: 1.7;
+  /*サイト全体にかかるmarginをリセット*/
+  margin: 0;
+  /*サイト全体にかかるpaddingをリセット*/
+  padding: 0;
+  /*サイトのデフォルトとなる文字の色を指定*/
+  color: #333;
+}
+
+/*見出しを全て太字で表示するように指定*/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+/*画像の最大幅を画面のサイズの最大幅に設定*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*ヘッダーの下に境界線を引く*/
+header {
+  border-bottom: solid 1px #ddd;
+}
+
+/*フッターの上に境界線を引く*/
+footer {
+  border-top: solid 1px #ddd;
+}
+
+/*確認用に一時記述----------*/
+.contents, #sidebar {height: 800px; }
+
+header{background-color: #888;}
+
+.header-inner{ background-color: #ccc; height: 200px;}
+
+.container {background-color: #9db2ea; }
+
+.contents {background-color: #a5e2ff; }
+
+#sidebar{background-color: #aefffc; }
+
+footer{background-color: #777; }
+
+.footer-inner{background-color: #ddd; height: 250px; }
+
+/* header, footerにわかりやすく文字を入れるための設定 */
+header{
+  position: relative; /* 子要素の基準 */
+  height: 200px;
+}
+
+footer{
+  position: relative;
+  height: 250px;
+}
+
+.character{
+  position: absolute; /* 子要素をabsoluteに設定 */
+}
+
+.header-inner{
+  position: absolute; /* 子要素をabsoluteに設定 */
+  right:0;            /* なぜかこれを0指定しないとmargin-right, margin-leftのセンタリングが効かない */
+  left: 0;            /* なぜかこれを0指定しないとmargin-right, margin-leftのセンタリングが効かない */
+  max-height: 100%;   /* 高さを親要素と同様に設定 */
+}
+
+.footer-inner{
+  position: absolute; /* 子要素をabsoluteに設定 */
+  right:0;            /* なぜかこれを0指定しないとmargin-right, margin-leftのセンタリングが効かない */
+  left: 0;            /* なぜかこれを0指定しないとmargin-right, margin-leftのセンタリングが効かない */
+  max-height: 100%;   /* 高さを親要素と同様に設定 */
+}
+
+/*------------------------*/
+
+/*コンテンツのサイズ指定*/
+.header-inner, .container, .footer-inner {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+
+  padding: 10px;
+  -webkit-box-sizing: border-box; /* Safari, Chrome向け  */
+  -moz-box-sizing: border-box; /* FireFox向け  */
+  box-sizing: border-box; /* border-box: paddingを要素の元のサイズに入れ込む */
+}
+
+.contents, #sidebar {
+  margin: 20px 0;
+}
+
+@media (min-width: 768px) {   /* 幅が768px以上のとき */
+  /*コンテンツとサイドバーを横に並べる*/
+  .container:after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+  .contents {
+    float: left;
+    width: 70%;
+    margin-right: 2%;
+  }
+  #sidebar {
+    float: left;
+    width: 28%;
+  }
+}
